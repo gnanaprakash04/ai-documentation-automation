@@ -1,0 +1,23 @@
+name: Generate Documentation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate documentation
+        run: python scripts/generate_docs.py
+
+      - name: Show generated documentation
+        run: cat docs/release-notes/generated-release-note.md

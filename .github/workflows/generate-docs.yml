@@ -21,7 +21,8 @@ jobs:
 
       - name: Show generated documentation
         run: cat docs/release-notes/generated-release-note.md
-              - name: Commit generated documentation
+
+      - name: Commit generated documentation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
